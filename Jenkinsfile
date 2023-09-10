@@ -18,3 +18,10 @@ pipeline {
                  sh "trivy fs ."
             }
         }
+        stage('Buld and Deploy') {
+            steps {
+                 sh "docker-compose up -d"
+            }
+        }
+    }
+}
